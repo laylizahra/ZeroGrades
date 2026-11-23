@@ -13,7 +13,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 Educational datasets often contain zero grades that look like normal scores but may actually mark a student **leaving the assessment**. This project investigates zero grades in the well-known [UCI Student Performance dataset](https://doi.org/10.24432/C5TG7T) (Cortez & Silva, 2008) and asks a simple but important question:
 
@@ -21,20 +21,20 @@ Educational datasets often contain zero grades that look like normal scores but 
 
 We examine how zeros appear across the three grading periods (G1, G2, G3), which student characteristics are associated with them, and how much they change a commonly reported finding: the relationship between **absences** and **final grades**.
 
-## ❓ Why This Matters
+## Why This Matters
 
 - Zero final grades account for **53 records**: **9.6%** of Mathematics and **2.3%** of Portuguese students.
 - The dataset has **no label** explaining what a zero means.
 - Zeros sit on the same 0–20 scale as valid grades, so they **cannot be told apart by value alone**.
 - Left untreated, zeros can **distort correlations** and lead to misleading conclusions.
 
-## 🎯 Research Goals
+## Research Goals
 
 1. **Identify zero-grade patterns** in G1, G2, and G3 across both subjects (frequency, combinations, persistence) and assess whether a zero behaves like an academic grade or like an exit marker.
 2. **Explore associations** between zero grades and student characteristics (past failures, study time, learning support, and more) at comparable initial grade levels.
 3. **Assess sensitivity** of the absences–final grade correlation to including or excluding students with zero final grades.
 
-## 📊 Data
+## Data
 
 | | Mathematics | Portuguese |
 |---|---|---|
@@ -47,7 +47,7 @@ We examine how zeros appear across the three grading periods (G1, G2, G3), which
 - **Origin:** grades and absences come from school reports; other attributes from questionnaires
 - **Note:** the two subject files overlap and contain no student ID
 
-## 🧩 Zero-Grade Taxonomy
+## Zero-Grade Taxonomy
 
 | Type | Definition | Mathematics | Portuguese |
 |---|---|---|---|
@@ -55,7 +55,7 @@ We examine how zeros appear across the three grading periods (G1, G2, G3), which
 | **Type B** | G3 = 0, G2 > 0 (zero appears at the end) | 25 | 8 |
 | **Anomaly** | G1 = 0, G2 > 0, G3 > 0 | n/a | 1 |
 
-## 🔬 Methodology
+## Methodology
 
 1. **Pattern analysis:** frequency, transitions, and persistence of zeros across G1 → G2 → G3.
 2. **Group comparison:** Type A, Type B, and regular students compared on G1, G2, absences, and other features.
@@ -70,7 +70,7 @@ We examine how zeros appear across the three grading periods (G1, G2, G3), which
 
 Each scenario reports **Pearson's r with 95% bootstrap confidence intervals**, with **Spearman's ρ** as a robustness check.
 
-## 💡 Key Findings
+## Key Findings
 
 - **Zeros follow a one-directional pattern.** Every G2 = 0 carries into G3, but a G3 = 0 can appear without an earlier zero (25 Mathematics and 8 Portuguese students still had a valid G2).
 - **Zeros rarely come out of nowhere.** Most zero-grade students were already below the pass mark of 10 before their grade dropped to zero.
@@ -84,9 +84,9 @@ Each scenario reports **Pearson's r with 95% bootstrap confidence intervals**, w
 
   In Mathematics, removing only Type A barely changes the result (r = −0.02), while removing only Type B goes further (r = −0.10). The negative association becomes clear only when both zero types are excluded.
 
-> ⚠️ **A note on interpretation.** The dataset does not explain *why* zeros occur. They cannot automatically be classified as recording errors or invalid grades, and absenteeism should not be assumed to be the cause: students who never attend may simply have no attendance records.
+> **A note on interpretation.** The dataset does not explain *why* zeros occur. They cannot automatically be classified as recording errors or invalid grades, and absenteeism should not be assumed to be the cause: students who never attend may simply have no attendance records.
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 <!-- Adjust to match your actual repository -->
 ```
@@ -99,7 +99,7 @@ Each scenario reports **Pearson's r with 95% bootstrap confidence intervals**, w
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
 # 1. Clone the repository
@@ -119,7 +119,7 @@ jupyter notebook
 
 The dataset can be downloaded from the [UCI repository](https://doi.org/10.24432/C5TG7T) and placed in the `data/` folder.
 
-## 👥 Team: Group 6
+## Team: Group 6
 
 | Name | Student ID |
 |---|---|
@@ -129,12 +129,12 @@ The dataset can be downloaded from the [UCI repository](https://doi.org/10.24432
 
 Department of Mathematics, Institut Teknologi Sepuluh Nopember (ITS), Surabaya, Indonesia.
 
-## 📚 References
+## References
 
 - Cortez, P. (2008). *Student Performance* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C5TG7T
 - Cortez, P., & Silva, A. M. G. (2008). Using data mining to predict secondary school student performance. *Proceedings of the 5th FUture BUsiness TEChnology Conference (FUBUTEC 2008)*. EUROSIS-ETI. https://repositorium.uminho.pt/handle/1822/8024
 - Cowles, M., & Davis, C. (1982). On the origins of the .05 level of statistical significance. *American Psychologist, 37*(5), 553–558. https://doi.org/10.1037/0003-066X.37.5.553
 
-## 📄 License
+## License
 
 This project is released under the [MIT License](LICENSE). The dataset remains subject to the terms of the UCI Machine Learning Repository.
